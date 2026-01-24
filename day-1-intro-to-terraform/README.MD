@@ -8,7 +8,7 @@ Day-1 Intro to Terraform
    also it's compatible with multiple cloud providers
 
 
-# difference between terraform and ansible 
+# Difference between terraform and ansible 
 
    both tools have their own purpose
 
@@ -22,4 +22,32 @@ Day-1 Intro to Terraform
 
   in real projects both are often used together terraform to create infra and ansible to configure it
 
-# to write the terraform files we use hcl language created by HashiCorp for terraform 
+# To write the terraform files we use hcl language created by HashiCorp for terraform 
+
+# What is iac
+
+  iac means infrastructure as code. instead of creating infrastructure manually by clicking in cloud console, we write code files to define our infrastructure
+
+  using iac, servers, networks, databases, load balancers, and other resources are created using code. this makes infrastructure predictable, repeatable, and easy to manage
+
+  with iac, the same infrastructure can be created multiple times in the same way without manual errors
+
+# Why iac is important
+
+  manual infrastructure creation is slow and error-prone. if something breaks, it is hard to recreate the same setup again
+
+  iac solves this by storing infrastructure in code form, which can be version controlled using git
+
+  it helps in automation, consistency, and faster deployments
+
+
+
+# Terraform role in devops
+
+  in devops, terraform is mainly used in the provisioning stage
+
+  it creates cloud infrastructure like ec2, vpc, s3, rds, eks, load balancers, etc
+
+  terraform code is usually stored in git and used by ci/cd pipelines
+
+  using terraform in devops allows teams to automate infrastructure creation and manage multiple environments like dev, staging, and prod
