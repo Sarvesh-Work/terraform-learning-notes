@@ -1,15 +1,21 @@
 # Day-3: Terraform Basic Commands
 
-# terraform init
+# 1.terraform init
   this is the first command we run in any terraform project
   It initializes Terraform in the current folder.
   it downloads required providers and creates hidden files/folders
   like .terraform and terraform.lock.hcl to manage state and dependencies
 
+  Note:
+   when we run "terraform init" Terraform scans all .tf files in the folder checks which providers are used locks their versions
+   and installs them automatically
+   So before running any Terraform code (plan/apply)
+   we must run "terraform init" at least once
+
   ex--> terraform init
 
 
-# terraform validate
+# 2.terraform validate
   This command is used to validate our Terraform configuration files
   It checks for syntax errors and basic issues in .tf files.
   This command is optional but recommended before plan/apply
@@ -17,7 +23,7 @@
   ex--> terraform validate
 
 
-# terraform plan
+# 3.terraform plan
   This command shows what Terraform is going to do before actually doing it.
   It creates an execution plan and tells us:
    - what resources will be created
@@ -44,7 +50,7 @@
   
    Plan: 1 to add, 0 to change, 0 to destroy.  
 
-# terraform apply
+# 4.terraform apply
   This is the main command that actually applies the configuration
    It creates or updates the infrastructure based on the plan.
   Terraform will ask for confirmation before proceeding.

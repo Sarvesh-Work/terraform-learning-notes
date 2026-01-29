@@ -20,7 +20,7 @@ Day-2 Basic syntax of hcl
         code.....  
     }  
 
-   2. provider -> telling the info about the cloud like which one to use, because terraform works with every cloud provider also region etc..  
+   2. provider -> telling the info about the cloud like which one to use, because terraform works with multiple cloud provider. 
 
    3. variable -> these are same like normal javascript or java variables that we define  
    # ex-->  
