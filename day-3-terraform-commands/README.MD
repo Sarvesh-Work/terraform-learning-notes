@@ -57,3 +57,13 @@
   After confirmation resources are created and state is updated
 
   ex--> terraform apply
+
+# 5. terraform destroy 
+  this command is use to destroy our infrastructure 
+  from the  cloud provider with one click it destroy every thing thats there in our .tf file.
+
+# Note:- to destroy the specific resource in terraform
+  we can use this command 
+
+  ex --> terraform destroy -target=<-resource_type.resource_name->
+  
