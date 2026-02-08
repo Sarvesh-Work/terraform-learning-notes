@@ -37,9 +37,11 @@ var.region
 
 Example usage:
 
+```terraform
 provider "aws" {
   region = var.region
 }
+```
 
 
 
@@ -47,26 +49,30 @@ provider "aws" {
 
 If no default is provided Terraform will ask value at runtime.
 
+```terraform
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
 }
-
+```
 
 # Ways to Pass Variable Values
 
 Method 1 — terraform.tfvars file (auto loaded)
 
 Create file: terraform.tfvars
-
+```terraform
 region = "us-east-1"
 instance_type = "t3.micro"
+```
 
 --------------------------------------------------
 
 Method 2 — Command line
 
+```terraform
 terraform apply -var="region=us-west-1"
+```
 
 --------------------------------------------------
 
@@ -85,30 +91,34 @@ Useful for:
 Defined using output block.
 
 Example:
-
+```terraform
 output "instance_public_ip" {
   value = aws_instance.myec2.public_ip
 }
+```
 
 After terraform apply → Terraform prints this value.
 
 --------------------------------------------------
 
 # Output With Description
-
+```terraform
 output "instance_id" {
   description = "ID of created EC2 instance"
   value       = aws_instance.myec2.id
 }
+```
 
 --------------------------------------------------
 
 # Sensitive Output (hide secrets)
 
+```terraform
 output "db_password" {
   value     = aws_db_instance.db.password
   sensitive = true
 }
+```
 
 This hides value in CLI output.
 
@@ -117,7 +127,7 @@ This hides value in CLI output.
 # Full Example — Variables + Outputs
 
 variables.tf
-
+```terraform
 variable "region" {
   default = "ap-south-1"
 }
@@ -125,11 +135,12 @@ variable "region" {
 variable "instance_type" {
   default = "t2.micro"
 }
+```
 
 --------------------------------------------------
 
 main.tf
-
+```terraform
 provider "aws" {
   region = var.region
 }
@@ -138,11 +149,12 @@ resource "aws_instance" "demo" {
   ami           = "ami-0abcdef12345"
   instance_type = var.instance_type
 }
+```
 
 --------------------------------------------------
 
 outputs.tf
-
+```terraform
 output "ec2_ip" {
   value = aws_instance.demo.public_ip
 }
@@ -150,6 +162,7 @@ output "ec2_ip" {
 output "ec2_id" {
   value = aws_instance.demo.id
 }
+```
 
 --------------------------------------------------
 
