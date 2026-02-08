@@ -22,11 +22,14 @@ Variables are defined using "variable" block.
 
 Example:
 
+```terraform
 variable "region" {
   description = "AWS region to deploy resources"
   type        = string
   default     = "ap-south-1"
 }
+```
+
 
 Use variable anywhere with:
 
