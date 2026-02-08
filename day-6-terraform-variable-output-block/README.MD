@@ -1,4 +1,4 @@
-# Day-5: Terraform Variables and Outputs
+# Day-6: Terraform Variables and Outputs
 
 terraform Variables and Outputs
 these are used to make Terraform code reusable and readable
